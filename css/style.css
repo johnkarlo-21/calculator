@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.buttons-container {
+    background-color: yellow;
+    width: 650px;
+    margin: 0 auto;
+}
+
