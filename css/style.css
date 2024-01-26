@@ -4,9 +4,29 @@
     box-sizing: border-box;
 }
 
-.buttons-container {
-    background-color: yellow;
-    width: 650px;
-    margin: 0 auto;
+.equation-holder {
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
 }
 
+.calcu-container {
+    background-color: yellow;
+    width: 600px;
+    height: 780px;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+.button-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calcu-btn {
+    font-size: 30px;
+    width: 25%;
+    height: 150px;
+}
