@@ -29,7 +29,58 @@ function operate(operator, num1, num2) {
     }
 }
 
+function showResult(){
+    const expression = equation.textContent;
+    const regex = /(-?\d+(?:\.\d+)?)\s*([+\-\/x])\s*(-?\d+(?:\.\d+)?)/;
 
-// Test the operate function
-let result = operate("/", 5, 4);
-console.log(`${result}`);
+    const match = expression.match(regex);
+    if (match) {
+        const firstNumber = parseFloat(match[1]);
+        const operator = match[2];
+        const secondNumber = parseFloat(match[3]);
+      
+        const result = operate(operator, firstNumber, secondNumber)
+        equation.textContent = result;
+      } else {
+        console.log("Invalid expression");
+      }
+}
+
+function nestOperation(){
+    const expression = equation.textContent;
+    const regex = /(-?\d+(?:\.\d+)?)\s*([+\-\/x])\s*(-?\d+(?:\.\d+)?)/;
+
+    const match = expression.match(regex);
+    if (match) {
+        const firstNumber = parseFloat(match[1]);
+        const operator = match[2];
+        const secondNumber = parseFloat(match[3]);
+      
+        const result = operate(operator, firstNumber, secondNumber)
+        equation.textContent = result;
+      } else {
+        console.log("Invalid expression");
+      }
+}
+
+const buttons = document.querySelectorAll('.calcu-btn');
+const equation = document.querySelector('.equation');
+const clearBtn = document.querySelector('.clear-btn');
+const equalButton = document.querySelector('.equal-btn');
+const operatorButtons = document.querySelectorAll('.operate-btn');
+
+clearBtn.addEventListener('click', () => equation.textContent = "");
+operatorButtons.forEach(button => {
+    button.addEventListener('click', nestOperation);
+})
+
+function displayNum(event){
+    const value = event.target.textContent;
+    equation.textContent += value;
+}
+
+buttons.forEach(button => {
+    button.addEventListener('click', displayNum)
+});
+
+equalButton.addEventListener('click', showResult)

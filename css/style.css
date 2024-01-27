@@ -4,11 +4,20 @@
     box-sizing: border-box;
 }
 
-.equation-holder {
+.equation-container {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 30px;
     background-color: black;
+    color: #fff;
     width: 100%;
     height: 100px;
     margin-bottom: 20px;
+}
+
+.equation {
+    font-size: 40px;
 }
 
 .calcu-container {
@@ -25,8 +34,9 @@
     flex-wrap: wrap;
 }
 
-.calcu-btn {
+.button-container > * {
     font-size: 30px;
     width: 25%;
     height: 150px;
 }
+
